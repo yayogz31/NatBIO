@@ -5,15 +5,15 @@
   --bg-pagina: #f4f6f5;
   --texto-oscuro: #181b1a;
   --texto-gris: #4a524f;
-  --verde-marca: #1f1e5b;
-  --verde-hover: #151435;
+  --verde-marca: #1f4e3d;
+  --verde-hover: #143529;
 
   --fuente-titulos: Georgia, 'Palatino Linotype', 'Book Antiqua', serif;
   --fuente-cuerpo: 'Segoe UI', Optima, Candara, system-ui, sans-serif;
 }
 
 /* ==========================================================================
-   2. RESET Y TAMAÑO DE LETRA REDUCIDO
+   2. RESET Y TAMAÑO DE LETRA BASE (ESCRITORIO / LAPTOP)
    ========================================================================== */
 * {
   margin: 0;
@@ -23,7 +23,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 52px;
+  scroll-padding-top: 68px;
   font-size: 19px;
 }
 
@@ -167,7 +167,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3.5rem 7%;
+  padding: 3.5rem 6%;
   max-width: 680px;
 }
 
@@ -184,16 +184,16 @@ body {
 .mitad-texto h1,
 .mitad-texto h2 {
   font-family: var(--fuente-titulos);
-  font-size: 1.65rem;
+  font-size: 1.4rem;
   font-weight: normal;
   line-height: 1.25;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
 }
 
 .parrafo {
   color: var(--texto-gris);
-  font-size: 0.95rem;
-  margin-bottom: 0.9rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.85rem;
 }
 
 .frase {
@@ -214,8 +214,8 @@ body {
 .puntos-clave li {
   position: relative;
   padding-left: 1rem;
-  margin-bottom: 0.4rem;
-  font-size: 0.9rem;
+  margin-bottom: 0.35rem;
+  font-size: 0.85rem;
 }
 
 .puntos-clave li::before {
@@ -445,16 +445,59 @@ body {
 }
 
 /* ==========================================================================
-   9. AJUSTE PARA VENTANAS REDUCIDAS
+   9. VERSIÓN MÓVIL RESPONSIVE (Solo se activa en celulares menores a 768px)
    ========================================================================== */
-@media (max-width: 700px) {
-  .fila-seccion,
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+    scroll-padding-top: 90px;
+  }
+
+  .fila-seccion {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .fila-seccion.invertido .mitad-fondo,
+  .fila-seccion.invertido .mitad-texto {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: stretch;
+  }
+
   .mitad-fondo {
-    min-height: 65vh;
+    min-height: 280px;
+    height: 280px;
+  }
+
+  .mitad-fondo::after,
+  .fila-seccion.invertido .mitad-fondo::after {
+    background: linear-gradient(
+      to bottom,
+      transparent 45%,
+      var(--bg-pagina) 100%
+    );
   }
 
   .mitad-texto {
-    padding: 1.5rem 1.2rem;
+    padding: 1.5rem 1.4rem 2.5rem;
+    max-width: 100%;
+  }
+
+  .navbar-interior {
+    padding: 0.6rem 1.2rem;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .contacto-columnas {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .whatsapp-flotante {
