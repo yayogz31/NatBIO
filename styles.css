@@ -24,7 +24,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 52px;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 body {
@@ -184,16 +184,16 @@ body {
 .mitad-texto h1,
 .mitad-texto h2 {
   font-family: var(--fuente-titulos);
-  font-size: 1.4rem;
+  font-size: 1.65rem;
   font-weight: normal;
   line-height: 1.25;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.75rem;
 }
 
 .parrafo {
   color: var(--texto-gris);
-  font-size: 0.9rem;
-  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
 }
 
 .frase {
@@ -214,8 +214,8 @@ body {
 .puntos-clave li {
   position: relative;
   padding-left: 1rem;
-  margin-bottom: 0.35rem;
-  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
 }
 
 .puntos-clave li::before {
