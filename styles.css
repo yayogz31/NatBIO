@@ -8,11 +8,11 @@
   --texto-oscuro: #131629;
   --texto-gris: #4a506e;
 
-  --azul-marca: #2b3595;
+  --azul-marca: #1626b5;
   --morado-marca: #5b21b6;
   --morado-hover: #4c1d95;
-  --gradiente-boton: linear-gradient(135deg, #1e2985 0%, #5b21b6 100%);
-  --gradiente-hover: linear-gradient(135deg, #312e81 0%, #6d28d9 100%);
+  --gradiente-boton: linear-gradient(135deg, #000a65 0%, #5b21b6 100%);
+  --gradiente-hover: linear-gradient(135deg, #2e8143 0%, #28d931 100%);
 
   --fuente-titulos: Georgia, 'Palatino Linotype', 'Book Antiqua', serif;
   --fuente-cuerpo: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
@@ -170,7 +170,6 @@ img {
   flex-direction: column;
   justify-content: center;
   padding: 3rem 5%;
-  background-image: linear-gradient(to top, #550189 ,#8982ba, #fff );
 
 }
 
@@ -258,6 +257,11 @@ img {
   border-radius: 6px;
 }
 
+.links-internos a:hover {
+  background-color: rgba(70, 75, 124, 0.192);
+
+}
+
 .acciones-seccion {
   display: flex;
   align-items: center;
@@ -289,6 +293,11 @@ img {
   color: var(--azul-marca);
   text-decoration: none;
   font-weight: 600;
+}
+
+
+.link-siguiente:hover {
+  color: #2d0269;
 }
 
 /* ==========================================================================
