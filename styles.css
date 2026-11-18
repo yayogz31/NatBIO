@@ -170,6 +170,8 @@ img {
   flex-direction: column;
   justify-content: center;
   padding: 3rem 5%;
+  background-image: linear-gradient(to top, #550189 ,#8982ba, #fff );
+
 }
 
 .etiqueta {
@@ -186,10 +188,10 @@ img {
 .mitad-texto h2 {
   font-family: var(--fuente-titulos);
   font-size: 1.65rem;
-  font-weight: normal;
+  font-weight: 10px;
   line-height: 1.25;
   margin-bottom: 0.85rem;
-  color: var(--texto-oscuro);
+  color: var(--texto-llamativo);
 }
 
 .parrafo {
