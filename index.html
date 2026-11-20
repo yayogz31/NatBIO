@@ -1,211 +1,395 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Natbio | Bienestar y Biohacking</title>
-  <!-- 1. Hoja de estilos (Presentación) -->
-  <link rel="stylesheet" href="styles.css?v=2">
-  <!-- 2. Lógica de comportamiento (Se ejecuta al terminar de cargar el HTML gracias a 'defer') -->
-  <script src="app.js" defer></script>
+
+  <!-- ===== SEO BÁSICO ===== -->
+  <title>Natbio e-ENERGY | Biohacking, Agua Alcalina y Bienestar Natural</title>
+  <meta name="description" content="Natbio e-ENERGY: catálogo informativo de bienestar natural con tecnología japonesa. Agua alcalina Alcaline Max, plantillas magnéticas, pulseras FIR, fajas y soportes. Atención por WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Natbio | e-ENERGY">
+  <meta name="theme-color" content="#0b1257">
+
+  <!-- ===== OPEN GRAPH / REDES SOCIALES ===== -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Natbio | e-ENERGY">
+  <meta property="og:title" content="Natbio e-ENERGY | Biohacking y Bienestar Natural">
+  <meta property="og:description" content="Hidratación alcalina, descanso y movimiento con tecnología japonesa. Conoce los productos y resuelve tus dudas por WhatsApp.">
+  <meta property="og:image" content="biohacking.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="biohacking.webp" type="image/webp">
+
+  <!-- ===== TIPOGRAFÍAS ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ===== ESTILOS Y LÓGICA ===== -->
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script src="app.js?v=3" defer></script>
+
+  <!-- ===== DATOS ESTRUCTURADOS (Google) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Natbio | e-ENERGY",
+    "description": "Distribuidor independiente Nipponflex. Catálogo informativo de productos de bienestar con tecnología japonesa.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+52-1-56-1295-7132",
+      "contactType": "customer service",
+      "availableLanguage": "Spanish",
+      "areaServed": "MX"
+    }
+  }
+  </script>
 </head>
 <body>
 
-  <!-- NAVBAR PRINCIPAL -->
-  <header id="inicio" class="navbar">
+  <a href="#contenido" class="saltar-contenido">Saltar al contenido</a>
+  <div class="barra-progreso" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
     <div class="navbar-interior">
-      <a href="#inicio" class="logo">Natbio | e-ENERGY</a>
-      
-      <nav class="nav-links">
+      <a href="#inicio" class="logo" aria-label="Natbio e-ENERGY, ir al inicio">
+        <span class="logo-marca">N</span>
+        <span class="logo-texto">Natbio <em>e-ENERGY</em></span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="menu-principal" aria-label="Navegación principal">
         <a href="#quienes-somos">Quiénes Somos</a>
-        <a href="#hidratacion"> Hidratación</a>
-        <a href="#postura"> Plantillas y Pulseras</a>
-        <a href="#sanacion"> Masaje y Soportes</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#hidratacion">Hidratación</a>
+        <a href="#postura">Plantillas y Pulseras</a>
+        <a href="#sanacion">Fajas y Soportes</a>
         <a href="#contacto" class="link-destacado">Contacto</a>
       </nav>
     </div>
   </header>
 
-  <!-- SECCIÓN 1 (IMPAR): Imagen a la IZQUIERDA | Texto a la DERECHA -->
-  <section id="quienes-somos" class="fila-seccion revelar-scroll es-visible">
-    <div class="mitad-fondo">
-      <img src="biohacking.webp"
-           alt="Biohacking y bienestar natural Nipponflex">
+  <!-- ===================== HERO ===================== -->
+  <section id="inicio" class="hero" aria-labelledby="titulo-principal">
+    <div class="hero-fondo" aria-hidden="true">
+      <span class="blob blob-1"></span>
+      <span class="blob blob-2"></span>
+      <span class="blob blob-3"></span>
+      <span class="malla"></span>
     </div>
-    <div class="mitad-texto">
-      <span class="etiqueta">01 &mdash; Quiénes Somos</span>
-      <h1>Bienestar diario y energía natural, sin medicamentos.</h1>
-      <p class="parrafo">
-        El Biohacking es optimizar cómo se siente y rinde tu cuerpo todos los días de forma 100% natural. Integramos tecnología japonesa patentada en artículos de uso cotidiano —agua, descanso y movimiento— para devolverte el equilibrio que el ritmo de la ciudad te quita.
-      </p>
-      <blockquote class="frase">
-        "Tomar mejor agua, caminar cómodo y descansar profundo: eso es Biohacking."
-      </blockquote>
-      <div class="links-internos">
-        <span>Explorar:</span>
-        <a href="#hidratacion">Hidratación &rarr;</a>
-        <a href="#postura">Pisada y Equilibrio &rarr;</a>
-        <a href="#sanacion">Alivio Muscular &rarr;</a>
+
+    <div class="hero-interior">
+      <div class="hero-texto">
+        <span class="pill revelar" data-anim="arriba">Tecnología japonesa &middot; Bienestar 100% natural</span>
+        <h1 id="titulo-principal" class="revelar" data-anim="arriba" data-delay="1">
+          Bienestar diario y <span class="texto-gradiente">energía natural</span>, sin medicamentos.
+        </h1>
+        <p class="hero-sub revelar" data-anim="arriba" data-delay="2">
+          Conoce cómo el Biohacking optimiza tu hidratación, tu descanso y tu movimiento con artículos de uso cotidiano.
+        </p>
+        <div class="hero-acciones revelar" data-anim="arriba" data-delay="3">
+          <a href="#quienes-somos" class="btn btn-primario">Conocer más</a>
+          <a href="#hidratacion" class="btn btn-fantasma">Ver productos</a>
+        </div>
       </div>
+
+      <ul class="hero-stats revelar" data-anim="arriba" data-delay="4" aria-label="Datos destacados">
+        <li><strong data-contador="99" data-sufijo="%">0</strong><span>del cloro eliminado del agua</span></li>
+        <li><strong data-contador="3">0</strong><span>pilares: agua, descanso y movimiento</span></li>
+        <li><strong data-contador="100" data-sufijo="%">0</strong><span>natural, sin medicamentos</span></li>
+      </ul>
     </div>
+
+    <a href="#quienes-somos" class="indicador-scroll" aria-label="Desplazarse a Quiénes Somos"><span></span></a>
   </section>
 
-  <!-- CONTENEDOR PRINCIPAL DE PRODUCTOS -->
-  <main>
+  <main id="contenido">
 
-    <!-- SECCIÓN 2 (PAR - INVERTIDA): Texto a la IZQUIERDA | Imagen a la DERECHA -->
-    <section id="hidratacion" class="fila-seccion invertido revelar-scroll">
-      <div class="mitad-fondo">
-        <img src="alcaline.webp"
-             alt="Botella y Purificador Alcaline Max" 
-             loading="lazy">
+    <!-- ===================== 01 QUIÉNES SOMOS ===================== -->
+    <section id="quienes-somos" class="seccion seccion-nosotros" aria-labelledby="titulo-nosotros">
+      <div class="contenedor fila">
+        <figure class="fila-imagen revelar" data-anim="izquierda">
+          <img src="biohacking.webp" width="962" height="773"
+               alt="Persona practicando biohacking y bienestar natural con productos Nipponflex">
+          <figcaption class="insignia-flotante">
+            <strong>e-ENERGY</strong>
+            <span>Distribuidor independiente Nipponflex</span>
+          </figcaption>
+        </figure>
+
+        <div class="fila-texto">
+          <span class="etiqueta revelar" data-anim="arriba">01 &mdash; Quiénes Somos</span>
+          <h2 id="titulo-nosotros" class="revelar" data-anim="arriba" data-delay="1">¿Qué es el Biohacking y cómo te ayuda?</h2>
+          <p class="parrafo revelar" data-anim="arriba" data-delay="2">
+            El Biohacking es optimizar cómo se siente y rinde tu cuerpo todos los días de forma <strong>100% natural</strong>. Integramos tecnología japonesa patentada en artículos de uso cotidiano —agua, descanso y movimiento— para devolverte el equilibrio que el ritmo de la ciudad te quita.
+          </p>
+          <blockquote class="frase revelar" data-anim="arriba" data-delay="3">
+            “Tomar mejor agua, caminar cómodo y descansar profundo: eso es Biohacking.”
+          </blockquote>
+
+          <ul class="pilares" aria-label="Nuestros tres pilares">
+            <li class="pilar revelar" data-anim="arriba" data-delay="3">
+              <span class="pilar-icono" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2.5s-6.5 7.2-6.5 12A6.5 6.5 0 0 0 18.5 14.5c0-4.8-6.5-12-6.5-12z"/></svg>
+              </span>
+              <h3>Hidratación</h3>
+              <p>Agua alcalina, ligera y libre de cloro.</p>
+            </li>
+            <li class="pilar revelar" data-anim="arriba" data-delay="4">
+              <span class="pilar-icono" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+              </span>
+              <h3>Descanso</h3>
+              <p>Recuperación muscular y alivio de tensión.</p>
+            </li>
+            <li class="pilar revelar" data-anim="arriba" data-delay="5">
+              <span class="pilar-icono" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+              </span>
+              <h3>Movimiento</h3>
+              <p>Confort al caminar y mejor postura.</p>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="mitad-texto">
-        <span class="etiqueta">02 &mdash; Hidratación Alcalina</span>
-        <h2>Botella Alcaline Max Squeeze y Purificadores</h2>
-        <p class="parrafo">
-          Transforma el agua común en agua alcalina, ligera y libre de cloro en segundos. Solo llena tu botella Squeeze, agita y disfruta de una hidratación más pura donde sea que estés.
-        </p>
-        <blockquote class="frase">
-          "Agua pura, alcalina y sin sabor a cloro en cada trago."
-        </blockquote>
-        <ul class="puntos-clave">
-          <li>Elimina hasta el 99% del cloro y metales pesados del agua.</li>
-          <li>Eleva el pH y libera minerales esenciales como magnesio.</li>
-          <li>Disponible en botella portátil (550 ml), jarra (3 L), purificadores de casa y filtro de regadera.</li>
-        </ul>
-        <div class="acciones-seccion">
-          <a href="https://wa.me/5215612957132?text=Hola,%20me%20interesa%20recibir%20informes%20de%20la%20botella%20Alcaline%20Squeeze%20y%20los%20purificadores." 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn-whatsapp">
-            Preguntar por WhatsApp
-          </a>
-          <a href="#postura" class="link-siguiente">Siguiente: Plantillas y Pulseras &darr;</a>
+
+      <!-- ----- TESTIMONIOS (dentro de Quiénes Somos) ----- -->
+      <!-- NOTA: reemplaza estos testimonios de ejemplo por opiniones reales de tus clientes (con su permiso). -->
+      <div id="testimonios" class="testimonios" aria-labelledby="titulo-testimonios">
+        <div class="contenedor">
+          <div class="encabezado-centro">
+            <span class="etiqueta revelar" data-anim="arriba">Testimonios</span>
+            <h2 id="titulo-testimonios" class="revelar" data-anim="arriba" data-delay="1">Lo que dicen quienes ya lo usan</h2>
+            <p class="parrafo revelar" data-anim="arriba" data-delay="2">Experiencias de personas que incorporaron el Biohacking a su rutina diaria.</p>
+          </div>
+
+          <div class="carrusel revelar" data-anim="zoom" data-delay="2" role="region" aria-roledescription="carrusel" aria-label="Testimonios de clientes">
+            <div class="carrusel-ventana">
+              <ul class="carrusel-pista">
+                <li class="testimonio" aria-roledescription="testimonio">
+                  <div class="estrellas" aria-label="5 de 5 estrellas">★★★★★</div>
+                  <blockquote>
+                    “Desde que uso la botella Alcaline el agua ya no me sabe a cloro y tomo mucha más durante el día. Me siento más ligera y con más energía.”
+                  </blockquote>
+                  <div class="autor">
+                    <span class="avatar" aria-hidden="true">MG</span>
+                    <div><strong>María G.</strong><span>Ciudad de México &middot; Hidratación</span></div>
+                  </div>
+                </li>
+                <li class="testimonio" aria-roledescription="testimonio">
+                  <div class="estrellas" aria-label="5 de 5 estrellas">★★★★★</div>
+                  <blockquote>
+                    “Trabajo de pie más de 8 horas. Con las plantillas Insole termino la jornada con los pies mucho más descansados.”
+                  </blockquote>
+                  <div class="autor">
+                    <span class="avatar" aria-hidden="true">JR</span>
+                    <div><strong>Jorge R.</strong><span>Estado de México &middot; Plantillas</span></div>
+                  </div>
+                </li>
+                <li class="testimonio" aria-roledescription="testimonio">
+                  <div class="estrellas" aria-label="5 de 5 estrellas">★★★★★</div>
+                  <blockquote>
+                    “El Magboy se volvió parte de mi rutina después de la oficina. En pocos minutos siento el cuello y la espalda más relajados.”
+                  </blockquote>
+                  <div class="autor">
+                    <span class="avatar" aria-hidden="true">LP</span>
+                    <div><strong>Laura P.</strong><span>Puebla &middot; Alivio muscular</span></div>
+                  </div>
+                </li>
+                <li class="testimonio" aria-roledescription="testimonio">
+                  <div class="estrellas" aria-label="5 de 5 estrellas">★★★★★</div>
+                  <blockquote>
+                    “La atención por WhatsApp fue muy clara: me explicaron cada producto sin presiones y resolvieron todas mis dudas.”
+                  </blockquote>
+                  <div class="autor">
+                    <span class="avatar" aria-hidden="true">CA</span>
+                    <div><strong>Carlos A.</strong><span>Querétaro &middot; Atención</span></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="carrusel-controles">
+              <button class="carrusel-btn" data-dir="-1" aria-label="Testimonio anterior">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+              </button>
+              <div class="carrusel-puntos" role="tablist" aria-label="Elegir testimonio"></div>
+              <button class="carrusel-btn" data-dir="1" aria-label="Testimonio siguiente">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN 3 (IMPAR): Imagen a la IZQUIERDA | Texto a la DERECHA -->
-    <section id="postura" class="fila-seccion revelar-scroll">
-      <div class="mitad-fondo">
-        <img src="fir.webp" 
-             alt="Plantillas Insole y Pulseras FIR Bracelet" 
-             loading="lazy">
-      </div>
-      <div class="mitad-texto">
-        <span class="etiqueta">03 &mdash; Pisada, Postura y Energía</span>
-        <h2>Plantillas Magnéticas Insole y Pulseras FIR</h2>
-        <p class="parrafo">
-          Diseñadas para quienes pasan muchas horas de pie o en movimiento. Las plantillas brindan un suave micromasaje en cada paso mientras las pulseras FIR te acompañan con comodidad durante toda tu jornada.
-        </p>
-        <blockquote class="frase">
-          "Tus pies con sensación de descanso y confort durante todo el día."
-        </blockquote>
-        <ul class="puntos-clave">
-          <li>Plantillas recortables a tu talla con imanes y biocerámica FIR Power®.</li>
-          <li>Aroma a eucalipto con protección contra hongos y bacterias.</li>
-          <li>Pulseras resistentes al uso diario con broche de acero quirúrgico.</li>
-        </ul>
-        <div class="acciones-seccion">
-          <a href="https://wa.me/5215612957132?text=Hola,%20me%20interesa%20recibir%20informes%20sobre%20las%20Plantillas%20Insole%20y%20las%20Pulseras%20FIR." 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn-whatsapp">
-            Preguntar por WhatsApp
-          </a>
-          <a href="#sanacion" class="link-siguiente">Siguiente: Masaje y Soportes &darr;</a>
+    <!-- ===================== 02 HIDRATACIÓN ===================== -->
+    <section id="hidratacion" class="seccion seccion-alterna" aria-labelledby="titulo-hidratacion">
+      <div class="contenedor fila invertido">
+        <figure class="fila-imagen revelar" data-anim="derecha">
+          <img src="alcaline.webp" width="963" height="772" loading="lazy"
+               alt="Botella de agua alcalina Alcaline Max Squeeze y purificadores Nipponflex">
+        </figure>
+        <div class="fila-texto">
+          <span class="etiqueta revelar" data-anim="arriba">02 &mdash; Hidratación Alcalina</span>
+          <h2 id="titulo-hidratacion" class="revelar" data-anim="arriba" data-delay="1">Botella Alcaline Max Squeeze y Purificadores</h2>
+          <p class="parrafo revelar" data-anim="arriba" data-delay="2">
+            Transforma el agua común en agua alcalina, ligera y libre de cloro en segundos. Solo llena tu botella Squeeze, agita y disfruta de una hidratación más pura donde sea que estés.
+          </p>
+          <blockquote class="frase revelar" data-anim="arriba" data-delay="3">
+            “Agua pura, alcalina y sin sabor a cloro en cada trago.”
+          </blockquote>
+          <ul class="puntos-clave">
+            <li class="revelar" data-anim="arriba" data-delay="3">Elimina hasta el 99% del cloro y metales pesados del agua.</li>
+            <li class="revelar" data-anim="arriba" data-delay="4">Eleva el pH y libera minerales esenciales como magnesio.</li>
+            <li class="revelar" data-anim="arriba" data-delay="5">Disponible en botella portátil (550 ml), jarra (3 L), purificadores de casa y filtro de regadera.</li>
+          </ul>
+          <div class="acciones-seccion revelar" data-anim="arriba" data-delay="5">
+            <a href="https://wa.me/5215612957132?text=Hola,%20me%20interesa%20recibir%20informes%20de%20la%20botella%20Alcaline%20Squeeze%20y%20los%20purificadores."
+               target="_blank" rel="noopener noreferrer" class="btn btn-primario">Pedir información</a>
+            <a href="#postura" class="link-siguiente">Siguiente: Plantillas y Pulseras <span aria-hidden="true">&darr;</span></a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN 4 (PAR - INVERTIDA): Texto a la IZQUIERDA | Imagen a la DERECHA -->
-    <section id="sanacion" class="fila-seccion invertido revelar-scroll">
-      <div class="mitad-fondo">
-        <img src="faja.webp" 
-             alt="Masajeador Magboy y Soportes" 
-             loading="lazy">
+    <!-- ===================== 03 POSTURA ===================== -->
+    <section id="postura" class="seccion" aria-labelledby="titulo-postura">
+      <div class="contenedor fila">
+        <figure class="fila-imagen revelar" data-anim="izquierda">
+          <img src="fir.webp" width="962" height="772" loading="lazy"
+               alt="Plantillas magnéticas Insole y pulseras FIR Bracelet Nipponflex">
+        </figure>
+        <div class="fila-texto">
+          <span class="etiqueta revelar" data-anim="arriba">03 &mdash; Pisada, Postura y Energía</span>
+          <h2 id="titulo-postura" class="revelar" data-anim="arriba" data-delay="1">Plantillas Magnéticas Insole y Pulseras FIR</h2>
+          <p class="parrafo revelar" data-anim="arriba" data-delay="2">
+            Diseñadas para quienes pasan muchas horas de pie o en movimiento. Las plantillas brindan un suave micromasaje en cada paso mientras las pulseras FIR te acompañan con comodidad durante toda tu jornada.
+          </p>
+          <blockquote class="frase revelar" data-anim="arriba" data-delay="3">
+            “Tus pies con sensación de descanso y confort durante todo el día.”
+          </blockquote>
+          <ul class="puntos-clave">
+            <li class="revelar" data-anim="arriba" data-delay="3">Plantillas recortables a tu talla con imanes y biocerámica FIR Power®.</li>
+            <li class="revelar" data-anim="arriba" data-delay="4">Aroma a eucalipto con protección contra hongos y bacterias.</li>
+            <li class="revelar" data-anim="arriba" data-delay="5">Pulseras resistentes al uso diario con broche de acero quirúrgico.</li>
+          </ul>
+          <div class="acciones-seccion revelar" data-anim="arriba" data-delay="5">
+            <a href="https://wa.me/5215612957132?text=Hola,%20me%20interesa%20recibir%20informes%20sobre%20las%20Plantillas%20Insole%20y%20las%20Pulseras%20FIR."
+               target="_blank" rel="noopener noreferrer" class="btn btn-primario">Pedir información</a>
+            <a href="#sanacion" class="link-siguiente">Siguiente: Fajas y Soportes <span aria-hidden="true">&darr;</span></a>
+          </div>
+        </div>
       </div>
-      <div class="mitad-texto">
-        <span class="etiqueta">04 &mdash; Alivio y Soporte Muscular</span>
-        <h2> Fajas y Parches FIR</h2>
-        <p class="parrafo">
-          Herramientas prácticas para soltar la tensión acumulada en cuello, hombros, espalda y rodillas. Úsalas en casa, en la oficina o al entrenar para sentir alivio inmediato.
-        </p>
-        <blockquote class="frase">
-          "Relaja los músculos cansados y recupera tu comodidad en minutos."
-        </blockquote>
-        <ul class="puntos-clave">
-          <li>Magboy: Rodillo masajeador de bolsillo para cuello y espalda baja.</li>
-          <li>Fajas, rodilleras y muñequeras de neopreno que dan firmeza sin apretar.</li>
-          <li>Parches adhesivos Band FIR para colocar directo en zonas con rigidez.</li>
-        </ul>
-        <div class="acciones-seccion">
-          <a href="https://wa.me/5215612957132?text=Hola,%20me%20interesa%20recibir%20informes%20sobre%20el%20Masajeador%20Magboy%20y%20los%20Soportes." 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn-whatsapp">
-            Preguntar por WhatsApp
-          </a>
-          <a href="#contacto" class="link-siguiente">Ir a Contacto &darr;</a>
+    </section>
+
+    <!-- ===================== 04 ALIVIO MUSCULAR ===================== -->
+    <section id="sanacion" class="seccion seccion-alterna" aria-labelledby="titulo-sanacion">
+      <div class="contenedor fila invertido">
+        <figure class="fila-imagen revelar" data-anim="derecha">
+          <img src="faja.webp" width="962" height="768" loading="lazy"
+               alt="Masajeador Magboy, fajas, rodilleras y parches FIR Nipponflex para alivio muscular">
+        </figure>
+        <div class="fila-texto">
+          <span class="etiqueta revelar" data-anim="arriba">04 &mdash; Alivio y Soporte Muscular</span>
+          <h2 id="titulo-sanacion" class="revelar" data-anim="arriba" data-delay="1">Masajeador Magboy, Fajas y Parches FIR</h2>
+          <p class="parrafo revelar" data-anim="arriba" data-delay="2">
+            Herramientas prácticas para soltar la tensión acumulada en cuello, hombros, espalda y rodillas. Úsalas en casa, en la oficina o al entrenar para sentir alivio inmediato.
+          </p>
+          <blockquote class="frase revelar" data-anim="arriba" data-delay="3">
+            “Relaja los músculos cansados y recupera tu comodidad en minutos.”
+          </blockquote>
+          <ul class="puntos-clave">
+            <li class="revelar" data-anim="arriba" data-delay="3"><strong>Magboy:</strong> rodillo masajeador de bolsillo para cuello y espalda baja.</li>
+            <li class="revelar" data-anim="arriba" data-delay="4">Fajas, rodilleras y muñequeras de neopreno que dan firmeza sin apretar.</li>
+            <li class="revelar" data-anim="arriba" data-delay="5">Parches adhesivos Band FIR para colocar directo en zonas con rigidez.</li>
+          </ul>
+          <div class="acciones-seccion revelar" data-anim="arriba" data-delay="5">
+            <a href="https://wa.me/5215612957132?text=Hola,%20me%20interesa%20recibir%20informes%20sobre%20el%20Masajeador%20Magboy%20y%20los%20Soportes."
+               target="_blank" rel="noopener noreferrer" class="btn btn-primario">Pedir información</a>
+            <a href="#contacto" class="link-siguiente">Ir a Contacto <span aria-hidden="true">&darr;</span></a>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- SECCIÓN 5: CONTACTO Y AVISO LEGAL -->
-  <footer id="contacto" class="seccion-contacto revelar-scroll">
-    <div class="contacto-columnas">
-      <div class="contacto-info">
-        <span class="etiqueta">05 &mdash; Atención Directa</span>
-        <h2>¿Quieres conocer precios o armar tu paquete?</h2>
-        <p class="parrafo">
-          Escríbenos por WhatsApp para recibir atención personalizada, resolver tus dudas y coordinar el envío hasta tu domicilio.
-        </p>
-        <a href="https://wa.me/5215612957132?text=Hola,%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="btn-whatsapp">
-          Enviar mensaje por WhatsApp
+  <!-- ===================== 05 CONTACTO / FOOTER ===================== -->
+  <footer id="contacto" class="footer">
+    <div class="footer-fondo" aria-hidden="true"><span class="blob blob-1"></span><span class="blob blob-2"></span></div>
+
+    <div class="contenedor">
+      <div class="cta-tarjeta revelar" data-anim="zoom">
+        <div>
+          <span class="etiqueta etiqueta-clara">05 &mdash; Atención Directa</span>
+          <h2>¿Quieres conocer precios o armar tu paquete?</h2>
+          <p>Escríbenos por WhatsApp para recibir atención personalizada, resolver tus dudas y coordinar el envío hasta tu domicilio.</p>
+        </div>
+        <a href="https://wa.me/5215612957132?text=Hola,%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n."
+           target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+          <img src="whatsapp.webp" width="22" height="22" alt="" aria-hidden="true">
+          Enviar mensaje
         </a>
       </div>
 
-      <div class="contacto-mapa">
-        <h3>Secciones</h3>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#quienes-somos">Quiénes Somos</a></li>
-          <li><a href="#hidratacion">Hidratación (Alcaline)</a></li>
-          <li><a href="#postura"> Plantillas y Pulseras</a></li>
-          <li><a href="#sanacion">Fajas</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-    </div>
+      <div class="footer-columnas">
+        <div class="footer-marca revelar" data-anim="arriba">
+          <a href="#inicio" class="logo logo-claro">
+            <span class="logo-marca">N</span>
+            <span class="logo-texto">Natbio <em>e-ENERGY</em></span>
+          </a>
+          <p>Catálogo informativo de bienestar natural con tecnología japonesa. Distribuidor independiente Nipponflex.</p>
+        </div>
 
-    <div class="footer-legal">
-      <p class="aviso-medico">
-        <strong>Aviso importante:</strong> Estos artículos son herramientas de bienestar y confort diario; no son medicamentos ni sustituyen la consulta médica. <strong>Restricción de seguridad:</strong> Los productos con imanes están <strong>PROHIBIDOS</strong> para personas con marcapasos, desfibriladores, bombas de insulina o cualquier implante con batería.
-      </p>
-      <p class="copyright">&copy; 2026 Distribuidor Independiente Nipponflex | e-ENERGY. Catálogo informativo.</p>
+        <nav class="footer-nav revelar" data-anim="arriba" data-delay="1" aria-label="Mapa del sitio">
+          <h3>Secciones</h3>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#hidratacion">Hidratación (Alcaline)</a></li>
+            <li><a href="#postura">Plantillas y Pulseras</a></li>
+            <li><a href="#sanacion">Fajas y Soportes</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-contacto revelar" data-anim="arriba" data-delay="2">
+          <h3>Contacto</h3>
+          <ul>
+            <li><a href="https://wa.me/5215612957132" target="_blank" rel="noopener noreferrer">WhatsApp: +52 56 1295 7132</a></li>
+            <li>Envíos a domicilio en México</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p class="aviso-medico">
+          <strong>Aviso importante:</strong> Estos artículos son herramientas de bienestar y confort diario; no son medicamentos ni sustituyen la consulta médica. <strong>Restricción de seguridad:</strong> Los productos con imanes están <strong>PROHIBIDOS</strong> para personas con marcapasos, desfibriladores, bombas de insulina o cualquier implante con batería.
+        </p>
+        <p class="copyright">&copy; <span id="anio">2026</span> Distribuidor Independiente Nipponflex | e-ENERGY. Catálogo informativo.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- BOTÓN FLOTANTE FIJO DE WHATSAPP -->
-  <a href="https://wa.me/5215612957132?text=Hola,%20estoy%20viendo%20su%20p%C3%A1gina%20web%20y%20quiero%20pedir%20informes." 
-     target="_blank" 
-     rel="noopener noreferrer" 
-     class="whatsapp-flotante" 
-     aria-label="Contactar por WhatsApp">
-    
-    <!-- AQUÍ VA TU LOGO -->
-    <span class="espacio-logo-wa">
-      <img src="whatsapp.webp" alt="Whatsapp logo">
-    </span>
-
+  <!-- ===================== FLOTANTES ===================== -->
+  <a href="https://wa.me/5215612957132?text=Hola,%20estoy%20viendo%20su%20p%C3%A1gina%20web%20y%20quiero%20pedir%20informes."
+     target="_blank" rel="noopener noreferrer" class="whatsapp-flotante" aria-label="Contactar por WhatsApp">
+    <span class="espacio-logo-wa"><img src="whatsapp.webp" width="22" height="22" alt="" aria-hidden="true"></span>
     <span class="texto-flotante">WhatsApp</span>
   </a>
+
+  <button class="volver-arriba" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>
+  </button>
 
 </body>
 </html>
