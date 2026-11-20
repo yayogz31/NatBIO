@@ -35,6 +35,82 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+
+  /* ---------- 4. Luces en los márgenes ---------- */
+  ['izq', 'der'].forEach((lado) => {
+    const tira = document.createElement('div');
+    tira.className = `luces-margen ${lado}`;
+    tira.setAttribute('aria-hidden', 'true');
+    const cantidad = Math.max(6, Math.round(window.innerHeight / 72));
+    for (let i = 0; i < cantidad; i++) {
+      const foco = document.createElement('span');
+      foco.style.setProperty('--c', colores[(i + (lado === 'der' ? 2 : 0)) % colores.length]);
+      foco.style.setProperty('--retraso', `${(Math.random() * 1.8).toFixed(2)}s`);
+      tira.appendChild(foco);
+    }
+    document.body.appendChild(tira);
+  });
+
+  /* ---------- 5. Regalitos en cada sección ---------- */
+  const regalo = (caja, liston, w) => `
+    <svg viewBox="0 0 60 60" width="${w}" height="${w}" aria-hidden="true">
+      <rect x="6" y="24" width="48" height="33" rx="3" fill="${caja}"/>
+      <rect x="3" y="16" width="54" height="11" rx="3" fill="${caja}"/>
+      <rect x="3" y="16" width="54" height="11" rx="3" fill="#fff" opacity=".18"/>
+      <rect x="26" y="16" width="8" height="41" fill="${liston}"/>
+      <path d="M30 16 C22 2 8 5 14 13 C18 18 26 16 30 16 Z M30 16 C38 2 52 5 46 13 C42 18 34 16 30 16 Z" fill="${liston}"/>
+    </svg>`;
+  const grupos = [
+    [['#dc2626', '#fbbf24', 46], ['#16a34a', '#fff', 32]],
+    [['#5b21b6', '#fbbf24', 40], ['#1626b5', '#f472b6', 30], ['#dc2626', '#fff', 24]],
+    [['#16a34a', '#dc2626', 44], ['#fbbf24', '#dc2626', 30]],
+  ];
+  const destinos = [
+    ...document.querySelectorAll('.bloque-fondo'),
+    document.querySelector('.testimonios'),
+    document.querySelector('.cta-tarjeta'),
+  ].filter(Boolean);
+  destinos.forEach((el, i) => {
+    const caja = document.createElement('div');
+    // En bloques con imagen, los regalos van del lado de la imagen para no tapar el texto
+    const lado = el.classList.contains('bloque-fondo')
+      ? (el.classList.contains('invertido') ? 'der' : 'izq')
+      : (i % 2 ? 'izq' : 'der');
+    caja.className = `regalitos ${lado}`;
+    caja.setAttribute('aria-hidden', 'true');
+    caja.innerHTML = grupos[i % grupos.length].map(([c, l, w]) => regalo(c, l, w)).join('');
+    el.appendChild(caja);
+  });
+
+  /* ---------- 6. Duende que se asoma ---------- */
+  const duendeOriginal = document.querySelector('.promo-escena .duende');
+  if (duendeOriginal) {
+    const asoma = document.createElement('a');
+    asoma.href = '#navidad';
+    asoma.className = 'duende-asoma';
+    asoma.setAttribute('aria-label', 'Ver la promoción de Navidad');
+    const copia = duendeOriginal.cloneNode(true);
+    copia.removeAttribute('class');
+    asoma.appendChild(copia);
+    const burbuja = document.createElement('span');
+    burbuja.className = 'duende-burbuja';
+    burbuja.textContent = '¡Reclama tu regalo! 🎁';
+    asoma.appendChild(burbuja);
+    document.body.appendChild(asoma);
+
+    if (reducirMovimiento) {
+      asoma.classList.add('asomado');
+    } else {
+      const ciclo = () => {
+        asoma.classList.add('asomado');
+        setTimeout(() => asoma.classList.remove('asomado'), 5000);
+      };
+      setTimeout(ciclo, 3500);
+      setInterval(ciclo, 16000);
+      asoma.addEventListener('mouseenter', () => asoma.classList.add('asomado'));
+    }
+  }
+
   /* ---------- 1. Nieve ---------- */
   if (reducirMovimiento) return;
   const canvas = document.createElement('canvas');
