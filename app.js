@@ -1,5 +1,5 @@
 /**
- * NATBIO e-ENERGY — Interacciones
+ * BIOFLEX e-ENERGY — Interacciones
  * 1. Navbar con scroll + barra de progreso + botón volver arriba
  * 2. Menú móvil
  * 3. Animaciones de entrada (IntersectionObserver)
@@ -8,7 +8,7 @@
  * 6. Carrusel de testimonios (auto, flechas, puntos, swipe, teclado)
  */
 document.addEventListener('DOMContentLoaded', () => {
-  window.natbioListo = true;
+  window.bioflexListo = true;
   const reducirMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- 1. Scroll: navbar, progreso, volver arriba ---------- */
