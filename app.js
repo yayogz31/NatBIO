@@ -8,6 +8,7 @@
  * 6. Carrusel de testimonios (auto, flechas, puntos, swipe, teclado)
  */
 document.addEventListener('DOMContentLoaded', () => {
+  window.natbioListo = true;
   const reducirMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- 1. Scroll: navbar, progreso, volver arriba ---------- */
