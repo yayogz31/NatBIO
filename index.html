@@ -28,9 +28,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- ===== ESTILOS Y LÓGICA ===== -->
-  <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="styles.css?v=3">
-  <script src="app.js?v=3" defer></script>
+  <script>
+    /* Activa animaciones solo si app.js carga; si falla, el contenido se muestra igual */
+    document.documentElement.classList.add('js');
+    setTimeout(function () { if (!window.natbioListo) document.documentElement.classList.remove('js'); }, 2500);
+  </script>
+  <link rel="stylesheet" href="styles.css?v=4">
+  <script src="app.js?v=4" defer></script>
 
   <!-- ===== DATOS ESTRUCTURADOS (Google) ===== -->
   <script type="application/ld+json">
