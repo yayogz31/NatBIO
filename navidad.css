@@ -1,0 +1,295 @@
+/* ==========================================================================
+   BIOFLEX — TEMA NAVIDEÑO (temporal)
+   Para quitarlo: borra el <link> a navidad.css, el <script> navidad.js
+   y los bloques marcados "NAVIDAD" en index.html.
+   ========================================================================== */
+
+:root {
+  --rojo-navidad: #dc2626;
+  --rojo-profundo: #7f1d1d;
+  --dorado: #fbbf24;
+  --verde-pino: #166534;
+}
+
+/* ---------- Nieve ---------- */
+.nieve {
+  position: fixed;
+  inset: 0;
+  z-index: 950;
+  pointer-events: none;
+}
+
+/* ---------- Gorrito en el logo y avatares ---------- */
+.logo-marca { position: relative; overflow: visible; }
+.logo-marca::after,
+.avatar::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'%3E%3Cpath d='M8 38 C14 14 34 2 52 10 C58 13 60 22 58 30 L50 26 C48 20 44 18 40 20 C30 24 26 32 26 38 Z' fill='%23dc2626'/%3E%3Crect x='4' y='34' width='42' height='11' rx='5.5' fill='%23fff'/%3E%3Ccircle cx='57' cy='32' r='6' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.25));
+}
+.logo-marca::after {
+  width: 34px; height: 26px;
+  top: -17px; left: -6px;
+  transform: rotate(-14deg);
+  transform-origin: 30% 90%;
+  animation: gorrito 3.5s ease-in-out infinite;
+}
+.avatar { position: relative; overflow: visible; }
+.avatar::after {
+  width: 30px; height: 22px;
+  top: -13px; left: -4px;
+  transform: rotate(-16deg);
+}
+@keyframes gorrito {
+  0%, 100% { transform: rotate(-14deg); }
+  50%      { transform: rotate(-6deg); }
+}
+
+/* ---------- Guirnalda de luces ---------- */
+.guirnalda {
+  position: absolute;
+  left: 0; right: 0;
+  height: 34px;
+  display: flex;
+  justify-content: space-around;
+  pointer-events: none;
+  z-index: 2;
+}
+.guirnalda::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: -14px;
+  height: 28px;
+  background: radial-gradient(ellipse 60px 16px at 50% 0, transparent 92%, rgba(255, 255, 255, 0.25) 94%, transparent 100%) 0 0 / 80px 28px repeat-x;
+}
+.guirnalda span {
+  position: relative;
+  width: 10px; height: 15px;
+  margin-top: 8px;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  background: var(--c, var(--dorado));
+  box-shadow: 0 0 10px 2px var(--c, var(--dorado));
+  animation: parpadeo 1.6s ease-in-out infinite;
+  animation-delay: var(--retraso, 0s);
+}
+.guirnalda span::before {
+  content: "";
+  position: absolute;
+  top: -4px; left: 2px;
+  width: 6px; height: 5px;
+  border-radius: 2px;
+  background: #334155;
+}
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; filter: brightness(1.15); }
+  50%      { opacity: 0.35; filter: brightness(0.8); box-shadow: none; }
+}
+.hero .guirnalda { top: var(--navbar-alto); }
+
+/* ---------- Suelo nevado con pinos al final del hero ---------- */
+.hero-nevado {
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 120px;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-nevado svg { width: 100%; height: 100%; display: block; }
+.hero .indicador-scroll { z-index: 3; border-color: rgba(11, 18, 87, 0.35); }
+.hero .indicador-scroll span { background: var(--navy); }
+
+/* ---------- Sección promoción ---------- */
+.seccion-navidad {
+  position: relative;
+  padding: 40px 0 90px;
+  background: var(--bg-pagina);
+}
+
+.promo-navidad {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 3.6rem 3.4rem 3.2rem;
+  border-radius: 32px;
+  color: #fff;
+  background:
+    radial-gradient(90% 120% at 100% 100%, rgba(220, 38, 38, 0.55) 0%, transparent 60%),
+    radial-gradient(70% 90% at 0% 0%, rgba(22, 38, 181, 0.7) 0%, transparent 60%),
+    linear-gradient(135deg, #0b1257 0%, #1e1b4b 55%, #4c0519 100%);
+  box-shadow: 0 30px 70px rgba(127, 29, 29, 0.28), 0 10px 30px rgba(11, 18, 87, 0.25);
+}
+/* copos decorativos de fondo */
+.promo-navidad::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.18;
+  background-image:
+    radial-gradient(circle, #fff 1.4px, transparent 1.6px),
+    radial-gradient(circle, #fff 1px, transparent 1.2px);
+  background-size: 46px 46px, 28px 28px;
+  background-position: 0 0, 14px 20px;
+  animation: copos-fondo 30s linear infinite;
+}
+@keyframes copos-fondo { to { background-position: 0 460px, 14px 300px; } }
+
+/* moño de regalo en la esquina */
+.promo-mono {
+  position: absolute;
+  top: 0; left: 64px;
+  width: 26px; height: 100%;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(251, 191, 36, 0.0), rgba(251, 191, 36, 0.35), rgba(251, 191, 36, 0.0));
+}
+
+.promo-navidad .guirnalda { top: 0; }
+
+.promo-etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dorado);
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  margin-bottom: 1.1rem;
+}
+
+.promo-navidad h2 {
+  color: #fff;
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 0.9rem;
+}
+.promo-navidad h2 em {
+  font-style: normal;
+  background: linear-gradient(90deg, #fde68a, #fbbf24, #fca5a5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.promo-navidad p {
+  color: #dfe3ff;
+  max-width: 540px;
+  margin-bottom: 1.6rem;
+}
+
+.promo-acciones {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.btn-regalo {
+  color: #fff;
+  background: linear-gradient(135deg, #b91c1c 0%, #ef4444 100%);
+  box-shadow: 0 10px 28px rgba(239, 68, 68, 0.45);
+  font-size: 1rem;
+  padding: 0.95rem 1.8rem;
+}
+.btn-regalo:hover { box-shadow: 0 16px 36px rgba(239, 68, 68, 0.55); }
+.btn-regalo svg { width: 22px; height: 22px; }
+.btn-regalo .icono-regalo { animation: sacudir 2.6s ease-in-out infinite; transform-origin: 50% 80%; }
+@keyframes sacudir {
+  0%, 70%, 100% { transform: rotate(0); }
+  75% { transform: rotate(-14deg); }
+  80% { transform: rotate(12deg); }
+  85% { transform: rotate(-8deg); }
+  90% { transform: rotate(5deg); }
+}
+
+.cuenta-regresiva {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: #dfe3ff;
+}
+.cuenta-regresiva strong {
+  display: inline-grid;
+  place-items: center;
+  min-width: 52px;
+  padding: 0.35rem 0.6rem;
+  border-radius: 12px;
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  color: var(--dorado);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* Ilustración: pinos + gnomo */
+.promo-escena {
+  position: relative;
+  height: 280px;
+}
+.promo-escena svg { position: absolute; bottom: 0; }
+.pino-grande { left: 0; width: 150px; animation: mecer 6s ease-in-out infinite; transform-origin: 50% 100%; }
+.pino-chico  { left: 120px; width: 95px; animation: mecer 7s ease-in-out infinite reverse; transform-origin: 50% 100%; }
+.gnomo { right: 0; width: 120px; animation: gnomo 4s ease-in-out infinite; transform-origin: 50% 100%; }
+.estrella-pino { animation: brillar 2s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.esfera { animation: parpadeo 2.2s ease-in-out infinite; }
+.esfera:nth-of-type(2n) { animation-delay: 0.6s; }
+.esfera:nth-of-type(3n) { animation-delay: 1.2s; }
+
+@keyframes mecer {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50%      { transform: rotate(1.5deg); }
+}
+@keyframes gnomo {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  25%      { transform: translateY(-6px) rotate(-3deg); }
+  50%      { transform: translateY(0) rotate(0); }
+  75%      { transform: translateY(-4px) rotate(3deg); }
+}
+@keyframes brillar {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 4px #fbbf24); }
+  50%      { transform: scale(1.18); filter: drop-shadow(0 0 10px #fde68a); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .seccion-navidad { padding: 24px 0 64px; }
+  .promo-navidad {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.5rem 0;
+    border-radius: 24px;
+    text-align: left;
+  }
+  .promo-acciones { flex-direction: column; align-items: stretch; }
+  .btn-regalo { width: 100%; }
+  .cuenta-regresiva { justify-content: center; }
+  .promo-escena { height: 200px; margin: 0 -0.5rem; }
+  .pino-grande { width: 110px; }
+  .pino-chico { left: 90px; width: 70px; }
+  .gnomo { width: 92px; }
+  .hero-nevado { height: 80px; }
+  .promo-mono { left: 32px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nieve { display: none; }
+}
+
+/* Pinos sobre el suelo nevado */
+.pino-suelo {
+  position: absolute;
+  bottom: 38%;
+  height: auto;
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.2));
+}
+.hero-nevado > svg:last-child { position: absolute; inset: 0; }
+@media (max-width: 900px) { .pino-suelo { transform: scale(0.7); transform-origin: bottom center; } }
